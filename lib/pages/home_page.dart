@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_niab/widgets/header_desktop.dart';
+import 'package:portfolio_niab/widgets/home_desktop.dart';
 
 import '../constants/colors.dart';
 
@@ -18,11 +19,7 @@ class HomePage extends StatelessWidget {
           HeaderDesktop(),
 
           //Раздел навыков
-          Container(
-            height: 500,
-            width: double.maxFinite,
-            color: Colors.white,
-          ),
+          HomeDesktop(),
 
           //Раздел проектов
           Container(
