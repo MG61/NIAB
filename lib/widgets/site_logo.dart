@@ -14,7 +14,7 @@ class SiteLogo extends StatelessWidget {
       //Текст;
       child: Text("Portfolio",
         style: GoogleFonts.jetBrainsMono(
-          fontSize: 22,
+          fontSize: 20,
           fontWeight: FontWeight.bold,
           color: Colors.white,
         ),

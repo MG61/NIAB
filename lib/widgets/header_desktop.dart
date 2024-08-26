@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../constants/colors.dart';
 import '../constants/nav_items.dart';
 import '../styles/style.dart';
@@ -35,7 +36,7 @@ class _HeaderDesktopState extends State<HeaderDesktop> {
                 onPressed: () {},
                 child: Text(
                   navTitles[i],
-                  style: const TextStyle(
+                  style: GoogleFonts.jetBrainsMono(
                       fontSize: 20,
                       fontWeight: FontWeight.w500,
                       color: Colors.white),
