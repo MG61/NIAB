@@ -15,11 +15,11 @@ class _HeaderDesktopState extends State<HeaderDesktop> {
   @override
   Widget build(BuildContext context) {
     return  Container(
+      color: CustomColor.toolbar_color,
       height: 60,
-      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       width: double.maxFinite,
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
 
-      //Свойство украшения коробки
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         //Строка
@@ -38,14 +38,14 @@ class _HeaderDesktopState extends State<HeaderDesktop> {
                   style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w500,
-                      color: Colors.black),
+                      color: Colors.white),
                 ),
               ),
             ),
           const Spacer(), // Разделитель
-          SiteLogo(
-            onTap: (){},
-          ),
+          const Image(image: AssetImage('assets/vk.png')),
+          const Image(image: AssetImage('assets/telegram.png')),
+          const Image(image: AssetImage('assets/github.png')),
         ],
       ),
     );
