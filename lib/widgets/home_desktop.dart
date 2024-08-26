@@ -5,12 +5,20 @@ class HomeDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //Получение размера экрана
+    final screenSize = MediaQuery.of(context).size;
+    //Получение ширины экрана
+    final screenWidth = screenSize.width;
+    //Получение ширины экрана
+    final screenHeight = screenSize.height;
+
+
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(image: new AssetImage('assets/background/background.png'), fit: BoxFit.cover),
       ),
-      height: 910,
-      width: double.maxFinite,
+      height: screenHeight,
+      width: screenWidth,
     );
   }
 }

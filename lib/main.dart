@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'NIAB_portfolio',
-        theme: ThemeData.light(),
+        theme: ThemeData.dark(),
         home: const HomePage(),
     );
   }
