@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../constants/colors.dart';
 
@@ -11,8 +12,8 @@ class SiteLogo extends StatelessWidget {
     return GestureDetector( //Детектор жестов
       onTap: onTap,
       //Текст;
-      child: const Text("Portfolio",
-        style: TextStyle(
+      child: Text("Portfolio",
+        style: GoogleFonts.jetBrainsMono(
           fontSize: 22,
           fontWeight: FontWeight.bold,
           color: Colors.white,
