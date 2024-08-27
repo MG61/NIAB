@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../constants/colors.dart';
-
 class SiteLogo extends StatelessWidget {
   const SiteLogo({super.key, required this.onTap});
   final VoidCallback? onTap; //Обьявление нажатия

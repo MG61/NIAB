@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../constants/colors.dart';
 import '../constants/nav_items.dart';
-import '../styles/style.dart';
 import 'site_logo.dart';
 
 class HeaderDesktop extends StatefulWidget {
@@ -16,7 +15,7 @@ class _HeaderDesktopState extends State<HeaderDesktop> {
   @override
   Widget build(BuildContext context) {
     return  Container(
-      color: CustomColor.toolbar_color,
+      color: CustomColor.toolbarColor,
       height: 60,
       width: double.maxFinite,
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),

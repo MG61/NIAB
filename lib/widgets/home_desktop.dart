@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 class HomeDesktop extends StatelessWidget {
   const HomeDesktop({super.key});
@@ -14,51 +15,64 @@ class HomeDesktop extends StatelessWidget {
     final screenHeight = screenSize.height;
 
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.vertical(top: Radius.zero,bottom: Radius.circular(45)),
         image: DecorationImage(
-            image: new AssetImage('assets/background/background.png'),
+            image: AssetImage('assets/background/background.png'),
             fit: BoxFit.cover),
       ),
       height: screenHeight,
       width: screenWidth,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        // mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Моё портфолио",
-                style: GoogleFonts.jetBrainsMono(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+          Container(
+            padding: const EdgeInsets.only(left: 40),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Моё портфолио",
+                  style: GoogleFonts.jetBrainsMono(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-              Text(
-                "Hi, I’m Nikita\n Flutter Developer",
-                style: GoogleFonts.jetBrainsMono(
-                  fontSize: 48,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                const SizedBox(
+                  height: 10,
                 ),
-              ),
-              Text(
-                "Lorem ipsum dolor sit amet consectetur. "
-                    "\nCondimentum fermentum justo est vel imperdiet."
-                    "\n Tristique in volutpat blandit quisque dolor."
-                    "\n Nisi nulla platea malesuada a nulla. ",
-                style: GoogleFonts.jetBrainsMono(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                Text(
+                  "Hi, I’m Nikita\nFlutter Developer",
+                  textAlign: TextAlign.left,
+                  style: GoogleFonts.jetBrainsMono(
+                    fontSize: 48,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-            ],
+                const SizedBox(height: 10,),
+                Text(
+                  "Lorem ipsum dolor sit amet consectetur.",
+                  textAlign: TextAlign.start,
+                  style: GoogleFonts.jetBrainsMono(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
           ),
-          Spacer(),
-          Column(
+          const Spacer(),
+           Column(
             children: [
+              Container(
+                height: 800,
+                width: 800,
+                  child: Lottie.asset("assets/lottie/computer.json"),
+              )
               //LottieFiles
             ],
           )

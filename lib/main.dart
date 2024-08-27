@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_niab/constants/colors.dart';
 import 'package:portfolio_niab/pages/home_page.dart';
 
 void main() {
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'NIAB_portfolio',
         theme: ThemeData.dark(),
+        color: CustomColor.backgroundDark,
         home: const HomePage(),
     );
   }
