@@ -9,30 +9,36 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: Stack(
+        children:[
+          ListView(
+            scrollDirection: Axis.vertical,
+            children: const [
 
-      body: ListView(
-        scrollDirection: Axis.vertical,
-        children: const [
+              //Основной раздел
+              HomeDesktop(),
 
-          //Toolbar
-          HeaderDesktop(),
+              //Раздел проектов
+              SizedBox(
+                height: 500,
+                width: double.maxFinite,
+              ),
 
-          //Основной раздел
-          HomeDesktop(),
+              //Раздел навыков
+              SizedBox(
+                height: 500,
+                width: double.maxFinite,
+              ),
 
-          //Раздел проектов
-          SizedBox(
-            height: 500,
-            width: double.maxFinite,
+            ],
           ),
-
-          //Раздел навыков
-          SizedBox(
-            height: 500,
-            width: double.maxFinite,
+          const Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: HeaderDesktop(),
           ),
-
-        ],
+        ]
       )
     );
   }
