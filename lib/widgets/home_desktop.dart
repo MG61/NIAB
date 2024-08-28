@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 
+import '../constants/colors.dart';
+
 class HomeDesktop extends StatelessWidget {
   const HomeDesktop({super.key});
 
@@ -16,7 +18,8 @@ class HomeDesktop extends StatelessWidget {
 
     return Container(
       decoration: const BoxDecoration(
-        borderRadius: BorderRadius.vertical(top: Radius.zero,bottom: Radius.circular(45)),
+        borderRadius: BorderRadius.vertical(
+            top: Radius.zero, bottom: Radius.circular(45)),
         image: DecorationImage(
             image: AssetImage('assets/background/background.png'),
             fit: BoxFit.cover),
@@ -32,19 +35,36 @@ class HomeDesktop extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "Моё портфолио",
-                  style: GoogleFonts.jetBrainsMono(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                Container(
+                  alignment: Alignment.center,
+                  height: 50,
+                  width: 400,
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(6)),
+                    gradient: LinearGradient(
+                      begin: Alignment.topRight,
+                      end: Alignment.bottomLeft,
+                      colors: [
+                        CustomColor.gradientBlue,
+                        CustomColor.gradientTial,
+                      ],
+                    ),
+                  ),
+                  child: Text(
+                    "Добро пожаловать на мой сайт портфолио",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.jetBrainsMono(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
                 const SizedBox(
                   height: 10,
                 ),
                 Text(
-                  "Hi, I’m Nikita\nFlutter Developer",
+                  "\nFlutter Developer",
                   textAlign: TextAlign.left,
                   style: GoogleFonts.jetBrainsMono(
                     fontSize: 48,
@@ -52,7 +72,9 @@ class HomeDesktop extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                const SizedBox(height: 10,),
+                const SizedBox(
+                  height: 10,
+                ),
                 Text(
                   "Lorem ipsum dolor sit amet consectetur.",
                   textAlign: TextAlign.start,
@@ -66,12 +88,12 @@ class HomeDesktop extends StatelessWidget {
             ),
           ),
           const Spacer(),
-           Column(
+          Column(
             children: [
-              Container(
+              SizedBox(
                 height: 800,
                 width: 800,
-                  child: Lottie.asset("assets/lottie/computer.json"),
+                child: Lottie.asset("assets/lottie/computer.json"),
               )
               //LottieFiles
             ],

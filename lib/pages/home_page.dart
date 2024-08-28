@@ -12,22 +12,22 @@ class HomePage extends StatelessWidget {
 
       body: ListView(
         scrollDirection: Axis.vertical,
-        children: [
+        children: const [
 
           //Toolbar
-          const HeaderDesktop(),
+          HeaderDesktop(),
 
           //Основной раздел
-          const HomeDesktop(),
+          HomeDesktop(),
 
           //Раздел проектов
-          Container(
+          SizedBox(
             height: 500,
             width: double.maxFinite,
           ),
 
           //Раздел навыков
-          Container(
+          SizedBox(
             height: 500,
             width: double.maxFinite,
           ),
