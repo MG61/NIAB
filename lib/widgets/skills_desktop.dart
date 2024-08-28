@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_niab/constants/colors.dart';
 import 'package:portfolio_niab/widgets/hoverable_card.dart';
 
+import '../constants/items/bottomSkills_items.dart';
 import '../constants/items/skills_items.dart';
 
 class SkillsDesktop extends StatelessWidget {
@@ -11,7 +12,7 @@ class SkillsDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(left: 60, top: 50),
+      padding: const EdgeInsets.only(left: 50, top: 50),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -27,7 +28,7 @@ class SkillsDesktop extends StatelessWidget {
           Container(
             width: 790,
             child: Text(
-              "Привет! Меня зовут Никита, и я — разработчик приложений и сайтов.Я владею различными инструментами и технологиями, включая Android Studio и Flutter для разработки мобильных приложений, а также Spring Framework и WPF на C# для создания мощных веб- и десктопных решений. Мой опыт работы с языками программирования, такими как C#, Java и Dart.Кроме того, я использую Figma для разработки пользовательских интерфейсов, что помогает мне создавать интуитивно понятные и привлекательные дизайны, которые улучшают пользовательский опыт. Я также работал с различными базами данных, включая MSSQL, MySQL, PostgreSQL и Firebase.",
+              "Привет! Меня зовут Никита, и я — разработчик приложений и сайтов. Я владею различными инструментами и технологиями, включая Android Studio и Flutter для разработки мобильных приложений и мощных web решений, а также использую WPF на языке C# для создания десктопных приложений. Я работаю с языками программирования, такими как C#, Java и Dart. Кроме того, мною используется Figma для разработки пользовательских интерфейсов, что помогает мне создавать интуитивно понятные и привлекательные дизайны, которые улучшают пользовательский опыт. И в завершение, вёл разработку с различными базами данных: MSSQL, MySQL, PostgreSQL и Firebase.",
               softWrap: true,
               style: GoogleFonts.jetBrainsMono(
                 fontSize: 14,
@@ -37,7 +38,7 @@ class SkillsDesktop extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 50,
+            height: 30,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -66,6 +67,32 @@ class SkillsDesktop extends StatelessWidget {
                                 ),
                               )
                             ]),
+                      ),
+                    ),
+                  ),
+                )
+            ],
+          ),
+          const SizedBox(height: 30,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              for (int i = 0; i < bottomSkillsImage.length; i++)
+                Padding(
+                  padding: const EdgeInsets.only(right: 15.0),
+                  child: HoverableWidget(
+                    child: Container(
+                      height: 70,
+                      width: 70,
+                      child: Card(
+                        child: Card(
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Image.asset(bottomSkillsImage[i]),
+                              ]),
+                        ),
                       ),
                     ),
                   ),

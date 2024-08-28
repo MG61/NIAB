@@ -11,8 +11,10 @@ class HoverableWidget extends StatefulWidget {
 
   const HoverableWidget({
     required this.child,
-    this.hoverColor = CustomColor.backgroundCardDark, // Цвет по умолчанию при наведении
-    this.defaultColor = CustomColor.backgroundCardBlue, // Начальный цвет по умолчанию
+    this.hoverColor =
+        CustomColor.backgroundCardBlue, // Цвет по умолчанию при наведении
+    this.defaultColor =
+        CustomColor.backgroundCardDark, // Начальный цвет по умолчанию
     Key? key,
   }) : super(key: key);
 
@@ -43,7 +45,10 @@ class _HoverableWidgetState extends State<HoverableWidget> {
         });
       },
       child: Container(
-        color: currentColor, // Установка цвета контейнера
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.all(Radius.circular(16)),
+          color: currentColor // Установка цвета контейнера
+        ),
         child: widget.child, // Отображение дочернего виджета
       ),
     );

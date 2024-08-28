@@ -1,0 +1,16 @@
+List<String> bottomSkillsImage = [
+  'assets/allSkills/csharp.png',
+  'assets/allSkills/java.png',
+  'assets/allSkills/dart.png',
+  'assets/allSkills/figma.png',
+  'assets/allSkills/docker.png',
+  'assets/allSkills/postman.png',
+  'assets/allSkills/git.png',
+  'assets/allSkills/mssql.png',
+  'assets/allSkills/mysql.png',
+  'assets/allSkills/postgresql.png',
+  'assets/allSkills/firebase.png',
+  'assets/allSkills/android_studio.png',
+  'assets/allSkills/vs.png',
+  'assets/allSkills/vc.png',
+];
