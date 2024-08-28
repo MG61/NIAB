@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../constants/items/projects_items.dart';
 import '../constants/items/skills_items.dart';
@@ -17,7 +18,6 @@ class ProjectsDesktop extends StatelessWidget {
     //Получение ширины экрана
     final screenHeight = screenSize.height;
 
-
     return Container(
       height: screenHeight,
       width: screenWidth,
@@ -26,7 +26,7 @@ class ProjectsDesktop extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Мои навыки",
+            "Мои проекты",
             style: GoogleFonts.jetBrainsMono(
               fontSize: 32,
               fontWeight: FontWeight.bold,
@@ -52,7 +52,7 @@ class ProjectsDesktop extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              for (int i = 0; i < skillsTitles.length; i++)
+              for (int i = 0; i < projectsImage.length; i++)
                 Padding(
                   padding: const EdgeInsets.only(right: 25.0),
                   child: HoverableWidget(
@@ -60,30 +60,56 @@ class ProjectsDesktop extends StatelessWidget {
                       height: 400,
                       width: 300,
                       child: Card(
-                        child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Image.network(projectsImage[i]),
-                              const SizedBox(height: 30),
-                              Text(
-                                projectsTitles[i],
-                                textAlign: TextAlign.center,
-                                style: GoogleFonts.jetBrainsMono(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 20, horizontal: 20),
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                    height: 150,
+                                    child: Image(
+                                        image: AssetImage(projectsImage[i]))
                                 ),
-                              ),
-                              Text(
-                                projectsInfo[i],
-                                textAlign: TextAlign.center,
-                                style: GoogleFonts.jetBrainsMono(
-                                  fontSize: 16,
-                                  color: Colors.white,
+                                const SizedBox(height: 10),
+                                Text(
+                                  projectsTitles[i],
+                                  textAlign: TextAlign.left,
+                                  style: GoogleFonts.jetBrainsMono(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
                                 ),
-                              ),
-                            ]),
+                                const SizedBox(height: 10),
+                                Text(
+                                  projectsInfo[i],
+                                  textAlign: TextAlign.left,
+                                  style: GoogleFonts.jetBrainsMono(
+                                    fontSize: 16,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                const Spacer(),
+                                Container(
+                                  alignment: Alignment.bottomRight,
+                                  child: GestureDetector(
+                                      onTap: () async {
+                                        var url =
+                                            projectsLink[i]; // URL для открытия
+                                        if (await canLaunch(url)) {
+                                          await launch(url);
+                                        } else {
+                                          throw 'Не удалось открыть ссылку: $url';
+                                        }
+                                      },
+                                      child: const Image(
+                                          image:
+                                              AssetImage('assets/github.png'))),
+                                ),
+                              ]),
+                        ),
                       ),
                     ),
                   ),

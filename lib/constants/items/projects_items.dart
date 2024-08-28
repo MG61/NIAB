@@ -1,8 +1,8 @@
 List<String> projectsImage = [
-  "https://ibb.co/2FbNWrZ",
-  "https://ibb.co/Nxy10F2",
-  "https://ibb.co/7JCkpHQ",
-  "https://ibb.co/mNmkGv3",
+  'assets/projects/mediaMarkt.png',
+  'assets/projects/toyFun.png',
+  'assets/projects/gadgetHab.png',
+  'assets/projects/portfolio.png',
 ];
 
 List<String> projectsTitles = [
@@ -13,10 +13,10 @@ List<String> projectsTitles = [
 ];
 
 List<String> projectsInfo = [
-  "Online Shop 'MediaMarkt-2.0' - ECommerce App In Android Studio",
-  "Online Shop 'ToyFun' - ECommerce App In Android Studio" ,
-  "Online Shop 'GadgetHab' - ECommerce Website using Spring Framework",
-  "Website portfolio of my skills and development platforms"
+  "Android приложение онлайн магазина по продаже электроники",
+  "Android приложение онлайн магазина по продаже игрушек" ,
+  "Веб-сайт магазина продажи электроники",
+  "Сайт портфолио о своих достижения"
 ];
 
 List<String> projectsLink = [
