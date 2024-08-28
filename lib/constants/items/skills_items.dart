@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 List<String> skillsTitles = [
-  "Adroid\nDeveloper",
+  "Android\nDeveloper",
   "Flutter\nDeveloper" ,
   "Web\nDeveloper",
-  "Desktop\nDeveloper"
+  "Content\nCreator"
 ];
 
 List<String> skillsImage = [

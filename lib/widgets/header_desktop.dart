@@ -2,8 +2,10 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio_niab/constants/items/socialNetworks_items.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../constants/colors.dart';
-import '../constants/nav_items.dart';
+import '../constants/items/nav_items.dart';
 import 'site_logo.dart';
 
 class HeaderDesktop extends StatefulWidget {
@@ -16,7 +18,7 @@ class HeaderDesktop extends StatefulWidget {
 class _HeaderDesktopState extends State<HeaderDesktop> {
   @override
   Widget build(BuildContext context) {
-    return  ClipRect(
+    return ClipRect(
       child: BackdropFilter(
         filter: ImageFilter.blur(
           sigmaX: 4.0,
@@ -27,13 +29,12 @@ class _HeaderDesktopState extends State<HeaderDesktop> {
           height: 60,
           width: double.maxFinite,
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-        
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             //Строка
             children: [
               SiteLogo(
-                onTap: (){},
+                onTap: () {},
               ),
               const Spacer(), // Разделитель
               for (int i = 0; i < navTitles.length; i++) // Цикл из 5-ти кнопок
@@ -50,10 +51,18 @@ class _HeaderDesktopState extends State<HeaderDesktop> {
                     ),
                   ),
                 ),
-              const Spacer(), // Разделитель
-              const Image(image: AssetImage('assets/vk.png')),
-              const Image(image: AssetImage('assets/telegram.png')),
-              const Image(image: AssetImage('assets/github.png')),
+              const Spacer(),
+              for (int i=0; i < socialNetworksImage.length; i++)
+                GestureDetector(
+                  onTap: () async {
+                    var url = socialNetworksLink[i]; // URL для открытия
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    } else {
+                      throw 'Не удалось открыть ссылку: $url';
+                    }
+                  },
+                  child:  Image(image: AssetImage(socialNetworksImage[i]))),
             ],
           ),
         ),
