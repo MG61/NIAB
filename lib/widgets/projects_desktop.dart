@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio_niab/constants/colors.dart';
-import 'package:portfolio_niab/widgets/hoverable_card.dart';
 
-import '../constants/items/bottomSkills_items.dart';
+import '../constants/items/projects_items.dart';
 import '../constants/items/skills_items.dart';
+import 'hoverable_card.dart';
 
-class SkillsDesktop extends StatelessWidget {
-  const SkillsDesktop({super.key});
+class ProjectsDesktop extends StatelessWidget {
+  const ProjectsDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -65,44 +64,26 @@ class SkillsDesktop extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Image.asset(skillsImage[i]),
+                              Image.network(projectsImage[i]),
                               const SizedBox(height: 30),
                               Text(
-                                skillsTitles[i],
+                                projectsTitles[i],
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.jetBrainsMono(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
                                 ),
-                              )
+                              ),
+                              Text(
+                                projectsInfo[i],
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.jetBrainsMono(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                ),
+                              ),
                             ]),
-                      ),
-                    ),
-                  ),
-                )
-            ],
-          ),
-          const SizedBox(height: 30,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              for (int i = 0; i < bottomSkillsImage.length; i++)
-                Padding(
-                  padding: const EdgeInsets.only(right: 15.0),
-                  child: HoverableWidget(
-                    child: Container(
-                      height: 70,
-                      width: 70,
-                      child: Card(
-                        child: Card(
-                          child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Image.asset(bottomSkillsImage[i]),
-                              ]),
-                        ),
                       ),
                     ),
                   ),
