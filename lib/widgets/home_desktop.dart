@@ -31,7 +31,7 @@ class HomeDesktop extends StatelessWidget {
         // mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            // padding: const EdgeInsets.only(left: 50,),
+            padding: const EdgeInsets.only(left: 60,),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,7 +82,7 @@ class HomeDesktop extends StatelessWidget {
                 Container(
                   width: 550,
                   child: Text(
-                    "Я разработчик, увлеченный созданием мобильных и веб-приложений. Сфокусировавшись на Android и Flutter, я разрабатываю эффективные и красивые решения.",
+                    "Разработчик, увлеченный созданием мобильных и веб-приложений. Сфокусировавшись на Android и Flutter, я разрабатываю эффективные и красивые решения.",
                     softWrap: true,
                     textAlign: TextAlign.start,
                     style: GoogleFonts.jetBrainsMono(

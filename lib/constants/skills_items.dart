@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
-List<String> navTitles = [
-  "Главная",
-  "Умения" ,
-  "Проекты",
+List<String> skillsTitles = [
+  "Adroid\nDeveloper",
+  "Flutter\nDeveloper" ,
+  "Web\nDeveloper",
+  "Desktop\nDeveloper"
 ];
 
-List<IconData> navIcons = [
-  Icons. home,
-  Icons. handyman_outlined,
-  Icons. apps,
+List<String> skillsImage = [
+  'assets/skills/android.png',
+  'assets/skills/flutter.png',
+  'assets/skills/website.png',
+  'assets/skills/figma.png',
 ];
