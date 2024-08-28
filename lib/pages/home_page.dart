@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_niab/widgets/header_desktop.dart';
 import 'package:portfolio_niab/widgets/home_desktop.dart';
+import 'package:portfolio_niab/widgets/skills_desktop.dart';
 
 
 class HomePage extends StatelessWidget {
@@ -19,10 +20,7 @@ class HomePage extends StatelessWidget {
               HomeDesktop(),
 
               //Раздел проектов
-              SizedBox(
-                height: 500,
-                width: double.maxFinite,
-              ),
+              SkillsDesktop(),
 
               //Раздел навыков
               SizedBox(

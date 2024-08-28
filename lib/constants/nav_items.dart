@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 List<String> navTitles = [
     "Главная",
-    "Умения" ,
+    "Навыки" ,
     "Проекты",
 ];
 
