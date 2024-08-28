@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:portfolio_niab/widgets/typing_animation.dart';
 
 import '../constants/colors.dart';
 
@@ -30,7 +31,7 @@ class HomeDesktop extends StatelessWidget {
         // mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            padding: const EdgeInsets.only(left: 40),
+            padding: const EdgeInsets.only(left: 50, bottom: 80),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,24 +65,37 @@ class HomeDesktop extends StatelessWidget {
                   height: 10,
                 ),
                 Text(
-                  "\nFlutter Developer",
+                  "Я Никита Абраменко",
                   textAlign: TextAlign.left,
                   style: GoogleFonts.jetBrainsMono(
-                    fontSize: 48,
+                    fontSize: 40,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
+                    letterSpacing: -3 ,
                   ),
                 ),
+                //Анимация текста
+                const TypingAnimation(),
                 const SizedBox(
                   height: 10,
                 ),
-                Text(
-                  "Lorem ipsum dolor sit amet consectetur.",
-                  textAlign: TextAlign.start,
-                  style: GoogleFonts.jetBrainsMono(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                Container(
+                  width: 550,
+                  child: Text(
+                    "Я разработчик, увлеченный созданием мобильных и веб-приложений. Сфокусировавшись на Android и Flutter, я разрабатываю эффективные и красивые решения.",
+                    // "Я разработчик, увлеченный созданием мобильных и веб-приложений.\n"
+                    //     "Сфокусировавшись на Android и Flutter,\n"
+                    //     "я разрабатываю эффективные и красивые решения.\n"
+                    //     "Мой подход — это сочетание креативности и технической экспертизы,\n"
+                    //     "что позволяет мне достигать высоких результатов в своих проектах\n"
+                    //     "и постоянно развиваться в сфере технологий.",
+                    softWrap: true,
+                    textAlign: TextAlign.start,
+                    style: GoogleFonts.jetBrainsMono(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ],
