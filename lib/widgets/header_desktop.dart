@@ -8,14 +8,10 @@ import '../constants/colors.dart';
 import '../constants/items/nav_items.dart';
 import 'site_logo.dart';
 
-class HeaderDesktop extends StatefulWidget {
-  const HeaderDesktop({super.key});
+class HeaderDesktop extends StatelessWidget {
+  const HeaderDesktop({super.key, required this.onNavMenuTap});
+  final Function(int) onNavMenuTap;
 
-  @override
-  State<HeaderDesktop> createState() => _HeaderDesktopState();
-}
-
-class _HeaderDesktopState extends State<HeaderDesktop> {
   @override
   Widget build(BuildContext context) {
     return ClipRect(
@@ -41,7 +37,9 @@ class _HeaderDesktopState extends State<HeaderDesktop> {
                 Padding(
                   padding: const EdgeInsets.only(right: 20),
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      onNavMenuTap(i);
+                    },
                     child: Text(
                       navTitles[i],
                       style: GoogleFonts.jetBrainsMono(

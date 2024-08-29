@@ -4,38 +4,67 @@ import 'package:portfolio_niab/widgets/home_desktop.dart';
 import 'package:portfolio_niab/widgets/projects_desktop.dart';
 import 'package:portfolio_niab/widgets/skills_desktop.dart';
 
-
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final scrollController = ScrollController();
+
+  final List<GlobalKey> navBarKeys = List.generate(3, (index) => GlobalKey());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children:[
-          ListView(
-            scrollDirection: Axis.vertical,
-            children: const [
+        body: Stack(children: [
+      SingleChildScrollView(
+        controller: scrollController,
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            SizedBox(
+              key: navBarKeys.first,
+            ),
+            //Основной раздел
+            HomeDesktop(),
 
-              //Основной раздел
-              HomeDesktop(),
+            //Раздел навыков
+            SkillsDesktop(
+              key: navBarKeys[1],
+            ),
 
-              //Раздел навыков
-              SkillsDesktop(),
+            //Раздел проектов
+            ProjectsDesktop(
+              key: navBarKeys[2],
+            ),
+          ],
+        ),
+      ),
+      Positioned(
+        top: 0,
+        left: 0,
+        right: 0,
+        child: HeaderDesktop(
+          onNavMenuTap: (int navIndex) {
+            //Вызов функции для прыжка
+            scrollToSection(navIndex);
+          },
+        ),
+      ),
+    ]));
+  }
 
-              //Раздел проектов
-              ProjectsDesktop(),
+  void scrollToSection(int navIndex) {
+    if (navIndex == 3) {
+      return;
+    }
 
-            ],
-          ),
-          const Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            child: HeaderDesktop(),
-          ),
-        ]
-      )
-    );
+    final key = navBarKeys[navIndex];
+    Scrollable.ensureVisible(key.currentContext!,
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeInOut);
   }
 }
