@@ -3,11 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_niab/constants/colors.dart';
 import 'package:portfolio_niab/widgets/hoverable_card.dart';
 
-import '../constants/items/bottomSkills_items.dart';
-import '../constants/items/skills_items.dart';
+import '../../constants/items/bottomSkills_items.dart';
+import '../../constants/items/skills_items.dart';
 
-class SkillsDesktop extends StatelessWidget {
-  const SkillsDesktop({super.key});
+class SkillsMobile extends StatelessWidget {
+  const SkillsMobile({super.key});
 
   @override
   Widget build(BuildContext context) {

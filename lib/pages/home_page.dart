@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_niab/widgets/header_desktop.dart';
-import 'package:portfolio_niab/widgets/home_desktop.dart';
-import 'package:portfolio_niab/widgets/home_mobile.dart';
-import 'package:portfolio_niab/widgets/projects_desktop.dart';
-import 'package:portfolio_niab/widgets/skills_desktop.dart';
+import 'package:portfolio_niab/widgets/card/card_skills.dart';
+import 'package:portfolio_niab/widgets/desktop/header_desktop.dart';
+import 'package:portfolio_niab/widgets/desktop/home_desktop.dart';
+import 'package:portfolio_niab/widgets/mobile/home_mobile.dart';
+import 'package:portfolio_niab/widgets/desktop/projects_desktop.dart';
+import 'package:portfolio_niab/widgets/desktop/skills_desktop.dart';
 
 import '../constants/size.dart';
 import '../widgets/drawer_mobile.dart';
-import '../widgets/header_mobile.dart';
-import '../widgets/home_tablet.dart';
+import '../widgets/mobile/header_mobile.dart';
+import '../widgets/tablet/home_tablet.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -32,7 +33,10 @@ class _HomePageState extends State<HomePage> {
           // Боковая панель (Drawer - слева, endDrawer - справа)
           endDrawer: constraints.maxWidth >= kMinDesktopWidth
               ? null
-              : const DrawerMobile(),
+              : DrawerMobile(onNavItemTap: (int navIndex){
+            scaffoldKey.currentState?.openEndDrawer();
+            scrollToSection(navIndex);
+          }),
           body: Stack(children: [
             SingleChildScrollView(
               controller: scrollController,

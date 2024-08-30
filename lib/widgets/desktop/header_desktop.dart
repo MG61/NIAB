@@ -5,9 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_niab/constants/items/socialNetworks_items.dart';
 import 'package:portfolio_niab/widgets/social_networks.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../constants/colors.dart';
-import '../constants/items/nav_items.dart';
-import 'site_logo.dart';
+import '../../constants/colors.dart';
+import '../../constants/items/nav_items.dart';
+import '../site_logo.dart';
 
 class HeaderDesktop extends StatelessWidget {
   const HeaderDesktop({super.key, required this.onNavMenuTap});

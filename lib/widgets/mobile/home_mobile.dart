@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:portfolio_niab/widgets/typing_animation.dart';
 
-import '../constants/colors.dart';
+import '../../constants/colors.dart';
 
 class HomeMobile extends StatelessWidget {
   const HomeMobile({super.key});
