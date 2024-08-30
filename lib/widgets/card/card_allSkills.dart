@@ -28,7 +28,6 @@ class CardAllskills extends StatelessWidget {
         children: List.generate(14, (index) {
           return Container(
             width: 70, // Ширина карточки определяется в зависимости от размера экрана
-            // height: _getCardHeight(context),
             child: HoverableWidget(
               child: Container(
                 child: Card(

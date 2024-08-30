@@ -14,6 +14,7 @@ import '../widgets/tablet/home_tablet.dart';
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -26,6 +27,15 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+    //Получение размера экрана
+    final screenSize = MediaQuery.of(context).size;
+    //Получение ширины экрана
+    final screenWidth = screenSize.width;
+    //Получение ширины экрана
+    final screenHeight = screenSize.height;
+
+
     return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
           key: scaffoldKey,
@@ -54,8 +64,6 @@ class _HomePageState extends State<HomePage> {
                     const HomeTablet()
                   else
                     const HomeDesktop(),
-//690 1150
-                  // const HomeDesktop(),
 
                   //Раздел навыков
                   SkillsDesktop(
@@ -66,6 +74,20 @@ class _HomePageState extends State<HomePage> {
                   ProjectsDesktop(
                     key: navBarKeys[2],
                   ),
+
+                  const SizedBox(height: 30),
+
+                  Container(
+                    height: 50,
+                    width: screenWidth,
+                    color: Colors.black,
+                    child: const Center(
+                      child:  Text(
+                        '© 2024, MG61',
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
@@ -85,12 +107,6 @@ class _HomePageState extends State<HomePage> {
                 scaffoldKey.currentState?.openEndDrawer();
               },
             ),
-            // child: HeaderDesktop(
-            //   onNavMenuTap: (int navIndex) {
-            //     //Вызов функции для прыжка
-            //     scrollToSection(navIndex);
-            //   },
-            // ),
           ]));
     });
   }
