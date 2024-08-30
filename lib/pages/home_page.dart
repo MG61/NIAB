@@ -8,6 +8,7 @@ import 'package:portfolio_niab/widgets/skills_desktop.dart';
 import '../constants/size.dart';
 import '../widgets/drawer_mobile.dart';
 import '../widgets/header_mobile.dart';
+import '../widgets/home_tablet.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -43,9 +44,13 @@ class _HomePageState extends State<HomePage> {
                   ),
 
                   //Основной раздел
-                  if (constraints.maxWidth > kMinDesktopWidth)
-                    const HomeDesktop() else const HomeMobile(),
-
+                  if (constraints.maxWidth < kMinDesktopWidth)
+                    const HomeMobile()
+                  else if (constraints.maxWidth > kMinDesktopWidth && constraints.maxWidth < kMedDesktopWidth)
+                    const HomeTablet()
+                  else
+                    const HomeDesktop(),
+//690 1150
                   // const HomeDesktop(),
 
                   //Раздел навыков
