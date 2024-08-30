@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_niab/constants/items/socialNetworks_items.dart';
+import 'package:portfolio_niab/widgets/social_networks.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../constants/colors.dart';
 import '../constants/items/nav_items.dart';
@@ -49,18 +50,11 @@ class HeaderDesktop extends StatelessWidget {
                     ),
                   ),
                 ),
+
               const Spacer(),
-              for (int i=0; i < socialNetworksImage.length; i++)
-                GestureDetector(
-                  onTap: () async {
-                    var url = socialNetworksLink[i]; // URL для открытия
-                    if (await canLaunch(url)) {
-                      await launch(url);
-                    } else {
-                      throw 'Не удалось открыть ссылку: $url';
-                    }
-                  },
-                  child:  Image(image: AssetImage(socialNetworksImage[i]))),
+
+              //Иконки социальных сетей
+              const SocialNetworks(),
             ],
           ),
         ),

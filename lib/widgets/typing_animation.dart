@@ -57,7 +57,7 @@ class _TypingAnimationState extends State<TypingAnimation> with SingleTickerProv
     return Text(
       displayedText,
       style: GoogleFonts.jetBrainsMono(
-        fontSize: 40,
+        fontSize: 32,
         fontWeight: FontWeight.bold,
         color: Colors.white,
         letterSpacing: -3,

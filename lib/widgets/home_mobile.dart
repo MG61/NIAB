@@ -5,8 +5,8 @@ import 'package:portfolio_niab/widgets/typing_animation.dart';
 
 import '../constants/colors.dart';
 
-class HomeDesktop extends StatelessWidget {
-  const HomeDesktop({super.key});
+class HomeMobile extends StatelessWidget {
+  const HomeMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,6 @@ class HomeDesktop extends StatelessWidget {
     final screenHeight = screenSize.height;
 
     return Container(
-
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.vertical(
             top: Radius.zero, bottom: Radius.circular(45)),
@@ -26,22 +25,23 @@ class HomeDesktop extends StatelessWidget {
             image: AssetImage('assets/background/background.png'),
             fit: BoxFit.cover),
       ),
-      height: screenHeight,
+      height: 805,
       width: screenWidth,
-      constraints: const BoxConstraints(minHeight: 350, minWidth: 550),
-      child: Row(
-        // mainAxisAlignment: MainAxisAlignment.center,
+      constraints: const BoxConstraints(minHeight: 390, minWidth: 480),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            padding: const EdgeInsets.only(left: 50,),
+            margin: const EdgeInsets.only(top: 80),
+            // padding: const EdgeInsets.only(left: 50,),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
                   alignment: Alignment.center,
                   height: 50,
-                  width: 400,
+                  width: screenWidth / 1.2,
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(6)),
                     gradient: LinearGradient(
@@ -68,12 +68,12 @@ class HomeDesktop extends StatelessWidget {
                 ),
                 Text(
                   "Я Никита Абраменко",
-                  textAlign: TextAlign.left,
+                  textAlign: TextAlign.center,
                   style: GoogleFonts.jetBrainsMono(
-                    fontSize: 40,
+                    fontSize: 32,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
-                    letterSpacing: -3 ,
+                    letterSpacing: -3,
                   ),
                 ),
                 //Анимация текста
@@ -82,31 +82,25 @@ class HomeDesktop extends StatelessWidget {
                   height: 10,
                 ),
                 Container(
-                  width: 550,
+                  width: screenWidth / 1.2,
                   child: Text(
                     "Разработчик, увлеченный созданием мобильных и веб-приложений. Сфокусировавшись на Android и Flutter, я разрабатываю эффективные и красивые решения.",
                     softWrap: true,
-                    textAlign: TextAlign.start,
+                    textAlign: TextAlign.justify,
                     style: GoogleFonts.jetBrainsMono(
-                      fontSize: 18,
+                      fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
                   ),
                 ),
+                Container(
+                  width: screenWidth/1.4,
+                  child: Lottie.asset("assets/lottie/computer.json"),
+                ),
               ],
             ),
           ),
-          Column(
-            children: [
-              SizedBox(
-                height: 800,
-                width: 800,
-                child: Lottie.asset("assets/lottie/computer.json"),
-              )
-              //LottieFiles
-            ],
-          )
         ],
       ),
     );
