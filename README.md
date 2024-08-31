@@ -1,16 +1,25 @@
-# portfolio_niab
+<p align="center">
+  <img src="https://i.ibb.co/d0MmpSt/2024-08-28-23-48-45.png" alt="Project logo" width="726">
+</p>
 
-Website portfolio
+# Cайт-портфолио
 
-## Getting Started
+Я — разработчик Android и Flutter-приложений, и на этом сайте вы сможете ознакомиться с моими навыками и проектами.
 
-This project is a starting point for a Flutter application.
+## На сайте вы найдете:
 
-A few resources to get you started if this is your first Flutter project:
+## Информация обо мне:
+Узнайте о моем образовании, опыте работы и профессиональных достижениях.
+  
+## Языки программирования:
+Полный список языков программирования, которые я освоил, включая Java, C#, Dart и другие. Это поможет вам понять, в каких технологиях я специализируюсь.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Мои проекты:
+Примеры моих работ с описанием каждого проекта. Вы сможете увидеть, как я применяю свои навыки для создания приложений, а также доступные ссылки на проекты или их демонстрации.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Контактная информация:
+Способы связаться со мной для обсуждения потенциального сотрудничества или вопросов.
+
+Этот сайт — мой способ продемонстрировать свои навыки и поделиться опытом. Я всегда готов к новым вызовам и возможностям!
+
+Ссылка на сайт: https://portfolio-niab.netlify.app
