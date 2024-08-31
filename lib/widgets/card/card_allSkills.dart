@@ -27,7 +27,7 @@ class CardAllskills extends StatelessWidget {
         runSpacing: 25.0, // Промежуток между строками
         children: List.generate(14, (index) {
           return Container(
-            width: 70, // Ширина карточки определяется в зависимости от размера экрана
+            width: 70,
             child: HoverableWidget(
               child: Container(
                 child: Card(
@@ -47,35 +47,4 @@ class CardAllskills extends StatelessWidget {
       ),
     );
   }
-
-// // Метод для определения ширины каждой карточки в зависимости от ширины экрана
-//   double _getCardWidth(BuildContext context) {
-//     final width = MediaQuery.of(context).size.width;
-//     final widthSize;
-//
-//     if (width >= 1200) {
-//       return (widthSize = 70) / 1; // 4 карточки в строке
-//     } else if (width >= 800) {
-//       return (widthSize = 70) ; // 2 карточки в строке
-//     } else {
-//       return (widthSize = 50) / 4; // 1 карточка в строке (ширина за вычетом отступов)
-//     }
-//
-//   }
-
-  // // Метод для определения высоты каждой карточки в зависимости от ширины экрана
-  // double _getCardHeight(BuildContext context) {
-  //   double height;
-  //   final width = MediaQuery.of(context).size.width;
-  //
-  //   if (width >= 1200) {
-  //     return (height = 400.0); // 4 карточки в строке
-  //   } else if (width >= 800) {
-  //     return (height = 400); // 2 карточки в строке
-  //   } else {
-  //     return (height = 200); // 1 карточка в строке (ширина за вычетом отступов)
-  //   }
-  //
-  // }
-
 }

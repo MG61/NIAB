@@ -18,7 +18,7 @@ class HomeDesktop extends StatelessWidget {
     final screenHeight = screenSize.height;
 
     return Container(
-
+      //Картинка заднего фона
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.vertical(
             top: Radius.zero, bottom: Radius.circular(45)),
@@ -28,6 +28,7 @@ class HomeDesktop extends StatelessWidget {
       ),
       height: screenHeight,
       width: screenWidth,
+      //Минимальные значения для окан
       constraints: const BoxConstraints(minHeight: 350, minWidth: 550),
       child: Row(
         // mainAxisAlignment: MainAxisAlignment.center,
@@ -38,6 +39,7 @@ class HomeDesktop extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                //Виджет текста с градиентом
                 Container(
                   alignment: Alignment.center,
                   height: 50,
@@ -81,6 +83,7 @@ class HomeDesktop extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
+                //Рассказ о себе
                 Container(
                   width: 550,
                   child: Text(
@@ -98,6 +101,7 @@ class HomeDesktop extends StatelessWidget {
             ),
           ),
           const Spacer(),
+          //Лотти файл
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,

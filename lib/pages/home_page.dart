@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final scrollController = ScrollController();
 
+  //Лист с  ключами для перехода по отделам сайта
   final List<GlobalKey> navBarKeys = List.generate(3, (index) => GlobalKey());
 
   @override
@@ -47,7 +48,9 @@ class _HomePageState extends State<HomePage> {
             scaffoldKey.currentState?.openEndDrawer();
             scrollToSection(navIndex);
           }),
+
           body: Stack(children: [
+            //Позволяет прокручивать элементы Column
             SingleChildScrollView(
               controller: scrollController,
               scrollDirection: Axis.vertical,
@@ -77,6 +80,7 @@ class _HomePageState extends State<HomePage> {
 
                   const SizedBox(height: 30),
 
+                  //Нижний колонтитул
                   Container(
                     height: 50,
                     width: screenWidth,
@@ -91,6 +95,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
+            //Закрпелённая навигационная панель
             if (constraints.maxWidth > kMinDesktopWidth)
               Positioned(
                   top: 0,
@@ -111,6 +116,7 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  //Метод для перехода по элементам Column
   void scrollToSection(int navIndex) {
     if (navIndex == 3) {
       return;
@@ -120,4 +126,5 @@ class _HomePageState extends State<HomePage> {
     Scrollable.ensureVisible(key.currentContext!,
         duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);
   }
+
 }

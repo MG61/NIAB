@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 List<String> skillsTitles = [
   "Android\nDeveloper",
   "Flutter\nDeveloper" ,

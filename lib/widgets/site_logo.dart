@@ -9,7 +9,6 @@ class SiteLogo extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector( //Детектор жестов
       onTap: onTap,
-      //Текст;
       child: Text("Portfolio",
         style: GoogleFonts.jetBrainsMono(
           fontSize: 20,

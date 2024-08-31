@@ -40,6 +40,7 @@ class SkillsDesktop extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 20),
+                  //Рассказ о себе
                   Container(
                     width: 790,
                     margin: EdgeInsets.symmetric(horizontal: 20),
@@ -61,12 +62,14 @@ class SkillsDesktop extends StatelessWidget {
             height: 30,
           ),
 
+          //Генерация карточек с навыками
           const CardSkills(),
 
           const SizedBox(
             height: 30,
           ),
 
+          //Генерция карточек с языками
           const CardAllskills(),
 
         ],

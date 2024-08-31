@@ -2,9 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio_niab/constants/items/socialNetworks_items.dart';
 import 'package:portfolio_niab/widgets/social_networks.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../../constants/colors.dart';
 import '../../constants/items/nav_items.dart';
 import '../site_logo.dart';
@@ -16,6 +14,7 @@ class HeaderDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRect(
+      //Блюр верхнего колонтитула
       child: BackdropFilter(
         filter: ImageFilter.blur(
           sigmaX: 4.0,
@@ -28,12 +27,13 @@ class HeaderDesktop extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            //Строка
+            //Лого
             children: [
               SiteLogo(
                 onTap: () {},
               ),
               const Spacer(), // Разделитель
+              //Генерация вкладок
               for (int i = 0; i < navTitles.length; i++) // Цикл из 5-ти кнопок
                 Padding(
                   padding: const EdgeInsets.only(right: 20),

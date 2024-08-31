@@ -35,6 +35,7 @@ class ProjectsDesktop extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
+          //Рассказ о себе
           Container(
             width: 790,
             margin: EdgeInsets.symmetric(horizontal: 20),
@@ -53,6 +54,7 @@ class ProjectsDesktop extends StatelessWidget {
             height: 30,
           ),
 
+          //Генерации адаптивных карточек
           const CardProjects(),
 
         ],
